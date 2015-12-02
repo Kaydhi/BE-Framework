@@ -1,0 +1,24 @@
+import java.util.Map;
+import java.io.*;
+
+public class main
+{
+
+	public static void main(String[] args) throws IOException
+	{
+		String[] command =
+		{
+				"CMD", "/C", "C:\\Users\\Max\\Desktop\\Informatique\\Java\\BelephoronProject\\Script.bat", "param1", "param2"
+		};
+		ProcessBuilder p = new ProcessBuilder(command);
+		Process p2 = p.start();
+		BufferedReader br = new BufferedReader(new InputStreamReader(p2.getInputStream()));
+		String line;
+		System.out.println("Output of running " + command + " is: ");
+		while ((line = br.readLine()) != null)
+		{
+			System.out.println(line);
+		}
+	}
+
+}
