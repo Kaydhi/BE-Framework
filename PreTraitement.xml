@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<params>
+	<value name = "DossierResultatPreTraitement">"/PreTraitement"</value>
+	<value name = "ValeurEntree">6</value>
+	<value name = "NomModel">"Model_trucChose"</value>
+	<value name = "ajoutNomModel">"_traite"</value>
+	<value name = "RepertoireCommun">"results"</value>
+</params>
