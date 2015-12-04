@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<params>
+	<value name = "CommentKey">"//"</value>
+	<value name = "OutputFolder">"Outputs"</value>
+	<value name = "OutputFileName">"Output_post.txt"</value>
+</params>
