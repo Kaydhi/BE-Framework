@@ -1,0 +1,24 @@
+Objectifs : 
+
+Paramétres à prendre en compte:
+- Chemin de destination des fichiers de sortie
+- Nombre de calculs à effectuer
+
+Application Java, qui à travers un workflow, execute une succession de tâches.
+
+Définit une tâche :
+-script(.bat/.sh)
+-Ensemble de fichiers ressources(Workflow des ressources)
+-Langage(Variables d'environnement)
+-Nb d'appels
+-Chemin de sortie
+-Résultats et nature de la sortie
+
+
+Faire un système permettant de contruire n'importe quelle tache;
+Questions à poser : 
+-Compatibilité entre les entrées/sorties des boites ?
+-Que faut-il paramétrer sur les tâches ?
+-Qu'est produit par altran (au niveau du script) ?
+-Que fait l'opérateur ?
+-Que faut t-il cacher à l'opérateur?
