@@ -31,8 +31,7 @@ Programme JAVA simple à réaliser :
 
 -IHM : -Paramètres : Champs de texte + légende (3)
 	OS? MEO.bat par défaut
-	- Case lancement automatique ? Prochaine tâche à exécuter
-
+	- Case lancement automatique ? Prochaine tâche à exécuter (chemin vers la tache suivante)
 
 -Programme : Insertion des paramètres ( Paramétrage du MEO)
 	     Lancer
