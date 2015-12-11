@@ -25,14 +25,14 @@ Questions à poser :
 -Que fait l'opérateur ?
 -Que faut t-il cacher à l'opérateur?
 -Quels paramètres à implémenter dans les tâches? 
+-Structure arborescente de workflow? Choix pour les tâches?
 
 
 Programme JAVA simple à réaliser : 
 
 -IHM : -Paramètres : Champs de texte + légende (3)
-	OS? MEO.bat par défaut
 	- Case lancement automatique ? Prochaine tâche à exécuter (chemin vers la tache suivante)
 
--Programme : Insertion des paramètres ( Paramétrage du MEO)
-	     Lancer
-	     L'enchainement automatique d'un deuxième MEO ; changer le format du fichier?
+-Programme : Insertion des paramètres ( Paramétrage du MEO) à travers l'IHM
+	     Lancement
+	     L'enchainement automatique(ou non) d'une deuxième tache ; gestion d'un workflow avec une liste ; 
