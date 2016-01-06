@@ -1,0 +1,15 @@
+# parsing de l'entrée
+python lecture.py data\entree.txt
+
+# pour les deux fichiers (A, B) on binarise
+mkdir A
+copy A.txt A\fort.11
+gfortran -o A\format.exe format.f90
+cd A 
+format.exe
+cd ..
+copy A\fort.12 A.bin
+
+# on fait l'addition de A et B
+gfortran -o addition.exe addition.f90
+copy fort.22 result.txt
