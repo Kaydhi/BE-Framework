@@ -1,11 +1,11 @@
-	public String[] getAllParameters()
+public String[] getAllParameters()
 	{
-		String[] allParameters = new String[iParametres.getOptions().size() + iParametres.getParametres() + 2];
-		allParameters = convertArrayListToString(iParametres.getInterpreteur(), convertArrayListToString(iParametres.getScript(), convertArrayListToString(iParametres.getParametres(), iParametres.getOptions()));
+		String[] allParameters = new String[getOptions().size() + getParametres().size() + getScript.size() + getInterpreteur().size()];
+		allParameters = assemble(convertArrayListToTableauString(getInterpreteur()), assemble(convertArrayListToTableauString(getScript()), assemble(convertArrayListToTableauString(getParametres()), convertArrayListToTableauString(getOptions()))));
 		return allParameters;
 	}
 	
-	public static String[] convertArrayListToString(ArrayList<String> array1)
+	public static String[] convertArrayListToTableauString(ArrayList<String> array1)
 	{
 		String[] commandResult = new String[array1.size()];
 		
@@ -35,38 +35,5 @@
 		{
 			commandResult[i + j] = strings2[i];
 		}
-		return commandResult;
-	}
-	
-	public static String[] assemble(String string1, String[] strings2)
-	{
-		String[] commandResult;
-		commandResult = new String[1 + strings2.length];
-		commandResult[0] = string1;
-		for (int i = 1; i < strings2.length; i++)
-		{
-			commandResult[i] = strings2[i];
-		}
-		return commandResult;
-	}
-	
-	public static String[] assemble(String[] strings1, String string2)
-	{
-		String[] commandResult;
-		commandResult = new String[1 + strings1.length];
-		for (int i = 0; i < strings1.length; i++)
-		{
-			commandResult[i] = strings1[i];
-		}
-		commandResult[strings1.length] = string2;
-		return commandResult;
-	}
-	
-	public static String[] assemble(String string1, String string2)
-	{
-		String[] commandResult;
-		commandResult = new String[2];
-		commandResult[0] = string1;
-		commandResult[1] = string2;
 		return commandResult;
 	}
