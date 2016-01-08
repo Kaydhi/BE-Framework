@@ -1,6 +1,6 @@
 # Compte-rendu 8 janvier
 
-Examen du diagramme UML
+Examen du diagramme UML\n
 •	Classe Etape : mauvaise idée !
 •	Automate + taches suivantes = redondance d’information !
 •	On peut rester sur l’idée d’un automate -> plus évolutif.
