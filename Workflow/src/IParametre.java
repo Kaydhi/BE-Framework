@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /*******************************************************************************
  * 2016, All rights reserved.
  *******************************************************************************/
@@ -18,26 +16,20 @@ public interface IParametre {
 
 	// End of user code
 
+	/**
+	 * Description of the method getParametres.
+	 */
+	public void getParametres();
 
-	/**
-	 * Description of the method getParametres.
-	 */
-	public String getScript();
-	
-	/**
-	 * Description of the method getParametres.
-	 */
-	public ArrayList<String> getParametres();
-	
 	/**
 	 * Description of the method getOptions.
 	 */
-	public ArrayList<String> getOptions();
+	public void getOptions();
 
 	/**
 	 * Description of the method getInterpreteur.
 	 */
-	public String getInterpreteur();
+	public void getInterpreteur();
 
 	// Start of user code (user defined methods for IParametre)
 

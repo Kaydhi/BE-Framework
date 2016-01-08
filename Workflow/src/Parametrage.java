@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /*******************************************************************************
  * 2016, All rights reserved.
  *******************************************************************************/
@@ -19,22 +16,22 @@ public class Parametrage implements IParametre {
 	/**
 	 * Description of the property script.
 	 */
-	public String script;
+	public ArrayList<String> script = ;
 	
 	/**
 	 * Description of the property parametres.
 	 */
-	public ArrayList<String> parametres;
+	public ArrayList<String> parametres = ;
 	
 	/**
-	 * Description of the property interpreteur.
+	 * Description of the property Interpreteur.
 	 */
-	public String interpreteur;
+	public ArrayList<String> Interpreteur = ;
 	
 	/**
 	 * Description of the property options.
 	 */
-	public ArrayList<String> options;
+	public ArrayList<String> options = ;
 	
 	// Start of user code (user defined attributes for Parametrage)
 	
@@ -44,18 +41,9 @@ public class Parametrage implements IParametre {
 	 * The constructor.
 	 */
 	public Parametrage() {
-		parametres = new ArrayList<String>();
-		options = new ArrayList<String>();
-	}
-	
-	/**
-	 * Overloaded constructor.
-	 */
-	public Parametrage(String newinterpreteur, String newscript, ArrayList<String> newparam, ArrayList<String> newoptions) {
-		interpreteur = newinterpreteur;
-		script = newscript;
-		parametres = newparam;
-		options = newoptions;
+		// Start of user code constructor for Parametrage)
+		super();
+		// End of user code
 	}
 	
 	// Start of user code (user defined methods for Parametrage)
@@ -63,19 +51,20 @@ public class Parametrage implements IParametre {
 	// End of user code
 	/**
 	 * Returns script.
-	 * @return script
+	 * @return script 
 	 */
-	public String getScript() {
+	public ArrayList<String> getScript() {
 		return this.script;
 	}
 	
 	/**
-	 * Sets a value to attribute parametres. 
-	 * @param newParametres 
+	 * Sets a value to attribute script. 
+	 * @param newScript 
 	 */
-	public void setScript(String newScript) {
+	public void setScript(ArrayList<String> newScript) {
 	    this.script = newScript;
 	}
+
 	
 	/**
 	 * Returns parametres.
@@ -94,19 +83,19 @@ public class Parametrage implements IParametre {
 	}
 
 	/**
-	 * Returns interpreteur.
-	 * @return interpreteur 
+	 * Returns Interpreteur.
+	 * @return Interpreteur 
 	 */
-	public String getInterpreteur() {
-		return this.interpreteur;
+	public ArrayList<String> getInterpreteur() {
+		return this.Interpreteur;
 	}
 	
 	/**
 	 * Sets a value to attribute Interpreteur. 
 	 * @param newInterpreteur 
 	 */
-	public void setInterpreteur(String newInterpreteur) {
-	    this.interpreteur = newInterpreteur;
+	public void setInterpreteur(ArrayList<String> newInterpreteur) {
+	    this.Interpreteur = newInterpreteur;
 	}
 
 	/**
@@ -124,6 +113,7 @@ public class Parametrage implements IParametre {
 	public void setOptions(ArrayList<String> newOptions) {
 	    this.options = newOptions;
 	}
+
 
 
 }
