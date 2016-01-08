@@ -1,0 +1,39 @@
+public String[] getAllParameters()
+	{
+		String[] allParameters = new String[getOptions().size() + getParametres().size() + getScript.size() + getInterpreteur().size()];
+		allParameters = assemble(convertArrayListToTableauString(getInterpreteur()), assemble(convertArrayListToTableauString(getScript()), assemble(convertArrayListToTableauString(getParametres()), convertArrayListToTableauString(getOptions()))));
+		return allParameters;
+	}
+	
+	public static String[] convertArrayListToTableauString(ArrayList<String> array1)
+	{
+		String[] commandResult = new String[array1.size()];
+		
+		ListIterator<String> ite = array1.listIterator();
+		int i=0;
+		while (ite.hasNext())
+		{
+			commandResult[i] = ite.next();
+			ite.next();
+			i++;
+		}
+		
+		return commandResult;
+	}
+	
+	public static String[] assemble(String[] strings1, String[] strings2)
+	{
+		String[] commandResult;
+		commandResult = new String[strings1.length + strings2.length];
+		int j = 0;
+		for (int i = 0; i < strings1.length; i++)
+		{
+			commandResult[i] = strings1[i];
+			j++;
+		}
+		for (int i = 0; i < strings2.length; i++)
+		{
+			commandResult[i + j] = strings2[i];
+		}
+		return commandResult;
+	}
