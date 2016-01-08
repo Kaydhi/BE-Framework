@@ -20,7 +20,7 @@ Fy= AFy + BFy
 Fz= AFz + BFz
 Mx= AMx + BMx
 My= AMy + BMy
-Mx= AMz + BMz
+Mz= AMz + BMz
 
 open(22,form="formatted")
 write(22,*) Fx, Fy, Fz
