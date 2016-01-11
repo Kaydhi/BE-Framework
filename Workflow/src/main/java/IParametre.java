@@ -1,3 +1,9 @@
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+/*******************************************************************************
+ import java.util.ArrayList;
+
 /*******************************************************************************
  * 2016, All rights reserved.
  *******************************************************************************/
@@ -12,27 +18,33 @@
  * @author Max
  */
 public interface IParametre {
-	// Start of user code (user defined attributes for IParametre)
-
-	// End of user code
 
 	/**
 	 * Description of the method getParametres.
 	 */
-	public void getParametres();
+	public String getNomScript();
+	public String getCheminScript();
+
+	/**
+	 * Description of the method getParametres.
+	 */
+	public ArrayList<String> getParametres();
 
 	/**
 	 * Description of the method getOptions.
 	 */
-	public void getOptions();
+	public ArrayList<String> getOptions();
 
 	/**
 	 * Description of the method getInterpreteur.
 	 */
-	public void getInterpreteur();
+	public String[] getInterpreteur();
+	public void setInterpreteur(String[] newInterpreteur);
 
-	// Start of user code (user defined methods for IParametre)
 
-	// End of user code
+
+	public String[] getAllParameters();
+
+
 
 }
