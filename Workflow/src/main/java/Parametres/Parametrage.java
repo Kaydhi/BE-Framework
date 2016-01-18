@@ -1,3 +1,4 @@
+package Parametres;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
@@ -11,26 +12,24 @@ import java.util.ListIterator;
 // End of user code
 
 /**
- * Description of Parametrage.
- * 
- * @author Max
+ * Description of Parametrage
  */
 public class Parametrage implements IParametre {
-	/**
-	 * Description of the property script.
-	 */
-	private String nomScript;
-	private String cheminScript;
 
+	private String nomScript;
+	private String cheminScript; //Chemin absolu à partir de l'endroit où est situé le WorkFlow
+	private String interpreteur;
+	
+	/*Non utilisé
+	/**
+	 * Extension
+	private String extension;
+	 */
+	
 	/**
 	 * Description of the property parametres.
 	 */
 	private ArrayList<String> parametres;
-
-	/**
-	 * Description of the property interpreteur.
-	 */
-	private String[] interpreteur;
 
 	/**
 	 * Description of the property options.
@@ -48,25 +47,37 @@ public class Parametrage implements IParametre {
 	/**
 	 * Overloaded constructor.
 	 */
-	public Parametrage(String newinterpreteur, String newScriptName, String newScriptPath, ArrayList<String> newparam, ArrayList<String> newoptions) {
-
-		interpreteur = stringToTabString(newinterpreteur);
+	public Parametrage(String newInterpreteur, String newScriptName, String newScriptPath, ArrayList<String> newparam, ArrayList<String> newoptions) {
+		interpreteur=newInterpreteur;
 		nomScript=newScriptName;
 		cheminScript=newScriptPath;
 		parametres = newparam;
 		options = newoptions;
+		/*extension = constructExtension(nomScript); non utilisé*/
 	}
-
-	// Start of user code (user defined methods for Parametrage)
-
-	// End of user code
 
 	/**
 	 * Returns script name.
 	 * @return script name
 	 */
+	public String getInterpreteur() {
+		return interpreteur;
+	}
+	
+	/**
+	 * Sets a value to attribute interpreteur. 
+	 * @param newParametres 
+	 */
+	public void setInterpreteur(String newInterpreteur) {
+	    interpreteur = newInterpreteur;
+	}
+	
+	/**
+	 * Returns script name.
+	 * @return script name
+	 */
 	public String getNomScript() {
-		return this.nomScript;
+		return nomScript;
 	}
 
 	/**
@@ -109,21 +120,14 @@ public class Parametrage implements IParametre {
 	    this.parametres = newParametres;
 	}
 
+	/*Non utilisé
 	/**
 	 * Returns interpreteur.
 	 * @return interpreteur 
-	 */
-	public String[] getInterpreteur() {
-		return this.interpreteur;
+	public String getExtension() {
+		return extension;
 	}
-
-	/**
-	 * Sets a value to attribute Interpreteur. 
-	 * @param newInterpreteur 
-	 */
-	public void setInterpreteur(String[] newInterpreteur) {
-	    this.interpreteur = newInterpreteur;
-	}
+	*/
 
 	/**
 	 * Returns options.
@@ -132,6 +136,30 @@ public class Parametrage implements IParametre {
 	public ArrayList<String> getOptions() {
 		return this.options;
 	}
+	
+	/*
+	 Permet de connaitre l'extension du fichier à executer,
+	 fonction non utilisée pour le moment
+	/**
+	 * Sets a value to attribute options. 
+	 * @param newOptions 
+	public String constructExtension(String _nomScript) 
+	{
+		String _extension = "";
+		boolean recupererLettres = false;
+		for (int i = 0 ; i < _nomScript.length() ;i++)
+		{
+			if (recupererLettres)
+			{
+				_extension += _nomScript.charAt(i);
+			}
+			if (_nomScript.charAt(i) == '.')
+			{
+				recupererLettres = true;
+			}
+		}
+		return _extension;
+	}*/
 
 	/**
 	 * Sets a value to attribute options. 
@@ -145,12 +173,11 @@ public class Parametrage implements IParametre {
 		String[] temp= new String[1];
 		temp[0]=s;
 		return temp;
-
 	}
 
-	public String[] getAllParameters(){
-		String[] allParameters = new String[getOptions().size() + getParametres().size() + getInterpreteur().length];
-		allParameters = assemble(getInterpreteur(), assemble(convertArrayListToTableauString(getParametres()), convertArrayListToTableauString(getOptions())));
+	public String[] getOptionsAndParameters(){
+		String[] allParameters = new String[getOptions().size() + getParametres().size()];
+		allParameters = assemble(convertArrayListToTableauString(getOptions()), convertArrayListToTableauString(getParametres()));
 		return allParameters;
 	}
 
@@ -185,6 +212,4 @@ public class Parametrage implements IParametre {
 		}
 		return commandResult;
 	}
-
-
 }

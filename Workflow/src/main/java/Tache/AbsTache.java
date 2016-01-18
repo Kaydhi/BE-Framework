@@ -1,9 +1,14 @@
+package Tache;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.ListIterator;
+
+import ConstructScript.ConstructScript;
+import Parametres.IParametre;
+import Parametres.Parametrage;
 
 /*******************************************************************************
  * 2016, All rights reserved.
@@ -16,9 +21,21 @@ import java.util.ListIterator;
  * @author Max
  */
 public abstract class AbsTache implements ITache {
+	/**
+	 * Parameters
+	 */
 	protected IParametre iParametres;
-	protected ArrayList<ITache> iTachesSuivantes;
 
+	/**
+	 * Taches
+	 */
+	protected ArrayList<ITache> iTachesSuivantes;
+	
+	/**
+	 * Script automatiquement généré qui est associé à la tâche
+	 */
+	protected ConstructScript script;
+			
 	/**
 	 * The constructor.
 	 */
@@ -28,6 +45,7 @@ public abstract class AbsTache implements ITache {
 	public AbsTache(ArrayList<ITache> _iTaches, IParametre _iParametres) {
 		iParametres = _iParametres;
 		iTachesSuivantes = _iTaches;
+		script = new ConstructScript(iParametres);
 	}
 
 	/**
@@ -78,56 +96,13 @@ public abstract class AbsTache implements ITache {
 	
 	public void launchTache()
 	{
-		String[] command;
-		// OS Detection
-		if (isWindows())
-		{
-			command = new String []
-			{
-					"CMD", "/C", iParametres.getNomScript()
-			};
-		}
-		else
-		{
-			command = new String[]
-			{
-					"/bin/sh", iParametres.getNomScript()
-			};
-		}
-
-		command = Parametrage.assemble(command, iParametres.getAllParameters());
-		ProcessBuilder p = new ProcessBuilder(command);
-		p.directory(new File(iParametres.getCheminScript()));
-		try
-		{
-			Process p2 = p.start();	//Lance le processus
-			BufferedReader br = new BufferedReader(new InputStreamReader(
-					p2.getInputStream()));	//Permet de lire la console
-			BufferedReader br2 = new BufferedReader(new InputStreamReader(
-					p2.getErrorStream()));	//Permet de lire les erreurs
-			String line;
-			System.out.println("Output of running " + command + " is: ");
-			while ((line = br.readLine()) != null)
-			{
-				System.out.println(line);	//Affiche les messages consoles
-			}
-			while ((line = br2.readLine()) != null)
-			{
-				System.out.println(line);	//Affiche les messages d'erreur
-			}
-			p2.destroy();	//Kill le processus
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+		script.ConstructAndLaunchScript();
 	}
 	
 	public void jumpToNextTaches()
 	{
-		if (iTachesSuivantes.size() == 0) {
-			//Ici il faut définir la fin du programme
-		}
+		if (iTachesSuivantes.size() == 0)
+			fin(); //Ici il faut définir 
 		else
 		{
 			ListIterator<ITache> ite = iTachesSuivantes.listIterator();

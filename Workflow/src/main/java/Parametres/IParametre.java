@@ -1,5 +1,5 @@
+package Parametres;
 import java.util.ArrayList;
-import java.util.ListIterator;
 
 /*******************************************************************************
  import java.util.ArrayList;
@@ -19,6 +19,9 @@ import java.util.ListIterator;
  */
 public interface IParametre {
 
+	public String getInterpreteur();
+	public void setInterpreteur(String newInterpreteur);
+	
 	/**
 	 * Description of the method getParametres.
 	 */
@@ -34,17 +37,11 @@ public interface IParametre {
 	 * Description of the method getOptions.
 	 */
 	public ArrayList<String> getOptions();
-
+	
 	/**
-	 * Description of the method getInterpreteur.
+	 * Permet d'obtenir les options et les paramètres
+	 * concaténés dans un même tableau de strings
+	 * @return
 	 */
-	public String[] getInterpreteur();
-	public void setInterpreteur(String[] newInterpreteur);
-
-
-
-	public String[] getAllParameters();
-
-
-
+	public String[] getOptionsAndParameters();
 }

@@ -1,6 +1,9 @@
+package Workflow;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.ListIterator;
+
+import Tache.AbsTache;
+import Tache.ITache;
 
 /*******************************************************************************
  * 2016, All rights reserved.
