@@ -14,7 +14,7 @@ Traitement des options : 2 possibilités
 => SAISIE BRUTE  
 
 Interface graphique avec RCP  
-•	2 perspectives envisagées : Création & Execution
+•	2 perspectives envisagées : Création & Execution  
 •	Partage des fonctionnalités dans 2 plug-ins séparés -> permet de bloquer la création de scénario pour les clients  
 •	Possibilité d'enchaînement sans IHM souhaitable !!!  
 
